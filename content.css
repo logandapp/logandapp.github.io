@@ -1,0 +1,64 @@
+:root {
+    --background: #000000;
+    --primary-color: #ffffff;
+
+    --max-size: min(100vh, 100vw/1.25);
+    --virtual-px: calc(var(--max-size)/1000);
+    --font-size: calc(var(--virtual-px) * 24);
+}
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: var(--font-size);
+    line-height: 1.5;
+}
+a{
+    color: inherit;
+}
+html, body {
+    height: 100%;
+}
+html {
+    display: table;
+    margin: auto;
+}
+body {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: var(--background);
+    color: var(--primary-color);
+}
+.title{
+    line-height: 1;
+    font-weight: bolder;
+    font-size: calc(var(--font-size) * 0.5);
+}
+.fraktur{
+    font-family: 'UnifrakturCook';
+    font-weight: lighter;
+    font-size: calc(var(--font-size) * 1.1);
+    margin-right: calc(var(--font-size) / -6);
+}
+@media (max-aspect-ratio: 1.0) {
+    .content {
+        width: 95vw;
+    }
+    .title {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (min-aspect-ratio: 1.0) {
+    .content {
+        width: 60vw;
+    }
+}
+#page-content {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}

@@ -1,0 +1,88 @@
+:root {
+    --background: #000000;
+    --primary-color: #ffffff;
+
+    --max-size: min(100vh, 100vw/1.25);
+    --virtual-px: calc(var(--max-size)/1000);
+    --offset-top: 0px;
+    --cursor-offset: 15;
+    --max-text-size: 39;
+}
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: var(--font-size);
+}
+a{
+    color: inherit;
+}
+body {
+    background-color: var(--background);
+    color: var(--primary-color);
+}
+.website-link {
+    font-weight: normal;
+}
+.website-link:hover {
+    font-weight: bold;
+}
+
+@media (max-aspect-ratio: 1.25) {
+    :root {
+        --font-size: calc(var(--virtual-px) * 36);
+        --enter-font-size: min(var(--font-size), 2vw);
+    }
+    .console-logo {
+        position: absolute;
+
+        top: calc(50vh - var(--font-size) * 10 + 2.25*var(--offset-top));
+        left: calc(50vw - var(--font-size) * 13.5);
+    }
+    .enter-text {
+        position: absolute;
+
+        font-size: var(--enter-font-size);
+
+        top: calc(70vh);
+        left: calc(50vw - var(--font-size) * 13.5);
+    }
+    .enter-text * {
+        font-size: var(--enter-font-size);
+    }
+    .cursor{
+        position: absolute;
+        background-color: var(--background);
+        width: calc(var(--enter-font-size) * (var(--max-text-size) - var(--cursor-offset)) * 0.6);
+        left: calc(var(--cursor-offset) * var(--enter-font-size) * 0.6);
+        top: 0;
+        color: var(--background);
+    }
+}
+@media (min-aspect-ratio: 1.25) {
+    :root {
+        --font-size: calc(var(--virtual-px) * 24);
+    }
+    .console-logo {
+        position: absolute;
+
+        top: calc(50vh - var(--font-size) * 7 + var(--offset-top));
+        left: calc(50vw - var(--font-size) * 23.5);
+    }
+    .enter-text {
+        position: absolute;
+
+        top: calc(60vh);
+        left: calc(50vw - var(--font-size) * 23.5);
+    }
+    .cursor{
+        position: absolute;
+        background-color: var(--background);
+        width: calc(var(--font-size) * (var(--max-text-size) - var(--cursor-offset)) * 0.6);
+        left: calc(var(--cursor-offset) * var(--font-size) * 0.6);
+        top: 0;
+        color: var(--background);
+    }
+}
+
+
+
